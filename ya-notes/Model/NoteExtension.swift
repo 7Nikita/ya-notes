@@ -6,27 +6,34 @@
 //  Copyright © 2020 Nikita Pekurin. All rights reserved.
 //
 
-import UIKit
+import UIKit.UIColor
 
 extension Note {
     
+    private static let uid = "uid"
+    private static let color = "color"
+    private static let title = "title"
+    private static let content = "content"
+    private static let importance = "importance"
+    private static let selfDestructionDate = "selfDestructionDate"
+    
     var json: [String: Any] {
         var json: [String: Any] = [
-            "uid": uid,
-            "title": title,
-            "content": content,
+            Note.uid: uid,
+            Note.title: title,
+            Note.content: content,
         ]
         
         if color != .white {
-            json["color"] = getComponentsFromColor(color: color)
+            json[Note.content] = getComponentsFromColor(color: color)
         }
         
         if importance != .regular {
-            json["importance"] = importance.rawValue
+            json[Note.importance] = importance.rawValue
         }
         
         if let selfDestructionDate = selfDestructionDate {
-            json["selfDestructionDate"] = selfDestructionDate.timeIntervalSince1970
+            json[Note.selfDestructionDate] = selfDestructionDate.timeIntervalSince1970
         }
         
         return json
@@ -34,25 +41,25 @@ extension Note {
     
     static func parse(json: [String: Any]) -> Note? {
         guard
-            let uid = json["uid"] as? String,
-            let title = json["title"] as? String,
-            let content = json["content"] as? String
+            let uid = json[Note.uid] as? String,
+            let title = json[Note.title] as? String,
+            let content = json[Note.content] as? String
             else {
                 return nil
         }
         
         var importance = Importance.regular
-        if let jsonImportance = json["importance"] as? String {
+        if let jsonImportance = json[Note.importance] as? String {
             importance = Importance(rawValue: jsonImportance) ?? Importance.regular
         }
         
         var destructionDate: Date? = nil
-        if let jsonDestructionDate = json["selfDestructionDate"] as? TimeInterval {
+        if let jsonDestructionDate = json[Note.selfDestructionDate] as? TimeInterval {
             destructionDate = Date(timeIntervalSince1970: jsonDestructionDate)
         }
         
         var color = UIColor.white
-        if let jsonComponents = json["color"] as? [String: Double] {
+        if let jsonComponents = json[Note.color] as? [String: Double] {
             color = getColorFromComponents(components: jsonComponents)
         }
         
