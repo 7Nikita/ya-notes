@@ -50,13 +50,10 @@ class NoteEditViewController : UIViewController {
     
     @IBAction func customColorLongTapped(_ sender: UILongPressGestureRecognizer) {
         if sender.state == UIGestureRecognizer.State.began {
-            let colorPickerStoryBoard = UIStoryboard(name: "ColorPicker", bundle: nil)
-            let colorPickerViewController = colorPickerStoryBoard.instantiateViewController(identifier: "colorPickerModal") as ColorPickerViewController?
-            colorPickerViewController?.lastSelectedColor = customPaletteView.backgroundColor
-            colorPickerViewController?.delegate = self
-            if let viewController = colorPickerViewController {
-                present(viewController, animated: true)
-            }
+            let colorPickerViewController = ColorPickerViewController()
+            colorPickerViewController.lastSelectedColor = customPaletteView.backgroundColor
+            colorPickerViewController.delegate = self
+            present(colorPickerViewController, animated: true)
         }
     }
     
