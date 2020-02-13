@@ -7,9 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		02E337D40CF6AE591C84DBEE /* libPods-ya-notes.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9ED88DB5ACB65C4C92ECFEFE /* libPods-ya-notes.a */; };
 		11117F6E23D857EA0034BCDF /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11117F6D23D857EA0034BCDF /* Note.swift */; };
 		11117F7123D8618A0034BCDF /* NoteExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11117F7023D8618A0034BCDF /* NoteExtension.swift */; };
+		112E30C823E585C9006FCF21 /* NoteExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112E30C723E585C9006FCF21 /* NoteExtensionTests.swift */; };
 		1187DFEB23D88DEA0035F1B8 /* FileNotebook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1187DFEA23D88DEA0035F1B8 /* FileNotebook.swift */; };
+		11A5D4C123EED34D00F29F31 /* NoteEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A5D4C023EED34D00F29F31 /* NoteEditViewController.swift */; };
+		11A5D4F223F021DE00F29F31 /* ColorPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A5D4F123F021DE00F29F31 /* ColorPickerView.swift */; };
+		11A5D4FA23F0327500F29F31 /* PaletteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A5D4F923F0327500F29F31 /* PaletteView.swift */; };
 		11D0054E23D77BFE0053893E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D0054D23D77BFE0053893E /* AppDelegate.swift */; };
 		11D0055023D77BFE0053893E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D0054F23D77BFE0053893E /* SceneDelegate.swift */; };
 		11D0055223D77BFE0053893E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D0055123D77BFE0053893E /* ViewController.swift */; };
@@ -19,6 +24,12 @@
 		11D0055D23D77C020053893E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11D0055B23D77C020053893E /* LaunchScreen.storyboard */; };
 		11D0056823D77C020053893E /* ya_notesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D0056723D77C020053893E /* ya_notesTests.swift */; };
 		11D0057323D77C020053893E /* ya_notesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D0057223D77C020053893E /* ya_notesUITests.swift */; };
+		11F9ACFE23F165AD00D58163 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F9ACFD23F165AD00D58163 /* UIColorExtension.swift */; };
+		11F9AD0123F1731700D58163 /* ColorPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F9ACFF23F1731700D58163 /* ColorPickerViewController.swift */; };
+		11F9AD0423F1749E00D58163 /* ColorPicker.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11F9AD0323F1749E00D58163 /* ColorPicker.storyboard */; };
+		11F9AD0723F1972B00D58163 /* ColorDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F9AD0623F1972B00D58163 /* ColorDelegate.swift */; };
+		4E254F9DBE22BC39A03C1158 /* libPods-ya-notesTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B9FBD38A856934A6F228730F /* libPods-ya-notesTests.a */; };
+		6067432B096AC42F178BB116 /* libPods-ya-notes-ya-notesUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 333216A5EA1298212033CD41 /* libPods-ya-notes-ya-notesUITests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,7 +52,11 @@
 /* Begin PBXFileReference section */
 		11117F6D23D857EA0034BCDF /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
 		11117F7023D8618A0034BCDF /* NoteExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteExtension.swift; sourceTree = "<group>"; };
+		112E30C723E585C9006FCF21 /* NoteExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteExtensionTests.swift; sourceTree = "<group>"; };
 		1187DFEA23D88DEA0035F1B8 /* FileNotebook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileNotebook.swift; sourceTree = "<group>"; };
+		11A5D4C023EED34D00F29F31 /* NoteEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteEditViewController.swift; sourceTree = "<group>"; };
+		11A5D4F123F021DE00F29F31 /* ColorPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPickerView.swift; sourceTree = "<group>"; };
+		11A5D4F923F0327500F29F31 /* PaletteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaletteView.swift; sourceTree = "<group>"; };
 		11D0054A23D77BFE0053893E /* ya-notes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ya-notes.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		11D0054D23D77BFE0053893E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		11D0054F23D77BFE0053893E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -57,6 +72,22 @@
 		11D0056E23D77C020053893E /* ya-notesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ya-notesUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		11D0057223D77C020053893E /* ya_notesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ya_notesUITests.swift; sourceTree = "<group>"; };
 		11D0057423D77C020053893E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		11F9ACFD23F165AD00D58163 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		11F9ACFF23F1731700D58163 /* ColorPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPickerViewController.swift; sourceTree = "<group>"; };
+		11F9AD0323F1749E00D58163 /* ColorPicker.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ColorPicker.storyboard; sourceTree = "<group>"; };
+		11F9AD0623F1972B00D58163 /* ColorDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorDelegate.swift; sourceTree = "<group>"; };
+		333216A5EA1298212033CD41 /* libPods-ya-notes-ya-notesUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ya-notes-ya-notesUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3F70359DDAF93A69985A79CB /* Pods-ya-notesTests.adhoc.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ya-notesTests.adhoc.xcconfig"; path = "Target Support Files/Pods-ya-notesTests/Pods-ya-notesTests.adhoc.xcconfig"; sourceTree = "<group>"; };
+		492B70351A6B32C57D27308B /* Pods-ya-notes-ya-notesUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ya-notes-ya-notesUITests.debug.xcconfig"; path = "Target Support Files/Pods-ya-notes-ya-notesUITests/Pods-ya-notes-ya-notesUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		7E45794B71904EEBF1F35D5E /* Pods-ya-notes.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ya-notes.release.xcconfig"; path = "Target Support Files/Pods-ya-notes/Pods-ya-notes.release.xcconfig"; sourceTree = "<group>"; };
+		8A24238E8F97A67FE6331D50 /* Pods-ya-notesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ya-notesTests.debug.xcconfig"; path = "Target Support Files/Pods-ya-notesTests/Pods-ya-notesTests.debug.xcconfig"; sourceTree = "<group>"; };
+		8BBB9F5E3DADAE20693D24B5 /* Pods-ya-notes.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ya-notes.debug.xcconfig"; path = "Target Support Files/Pods-ya-notes/Pods-ya-notes.debug.xcconfig"; sourceTree = "<group>"; };
+		9AA30B06B2DEE0EAE9963BC8 /* Pods-ya-notesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ya-notesTests.release.xcconfig"; path = "Target Support Files/Pods-ya-notesTests/Pods-ya-notesTests.release.xcconfig"; sourceTree = "<group>"; };
+		9ED88DB5ACB65C4C92ECFEFE /* libPods-ya-notes.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ya-notes.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B9FBD38A856934A6F228730F /* libPods-ya-notesTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ya-notesTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D0906123108130A6A8136E3C /* Pods-ya-notes-ya-notesUITests.adhoc.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ya-notes-ya-notesUITests.adhoc.xcconfig"; path = "Target Support Files/Pods-ya-notes-ya-notesUITests/Pods-ya-notes-ya-notesUITests.adhoc.xcconfig"; sourceTree = "<group>"; };
+		D2217789F2B2E94CEE760FF0 /* Pods-ya-notes.adhoc.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ya-notes.adhoc.xcconfig"; path = "Target Support Files/Pods-ya-notes/Pods-ya-notes.adhoc.xcconfig"; sourceTree = "<group>"; };
+		DEC43B5450ED807FC9B4B4E2 /* Pods-ya-notes-ya-notesUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ya-notes-ya-notesUITests.release.xcconfig"; path = "Target Support Files/Pods-ya-notes-ya-notesUITests/Pods-ya-notes-ya-notesUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +95,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				02E337D40CF6AE591C84DBEE /* libPods-ya-notes.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -71,6 +103,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E254F9DBE22BC39A03C1158 /* libPods-ya-notesTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +111,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6067432B096AC42F178BB116 /* libPods-ya-notes-ya-notesUITests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,6 +128,24 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		11A5D4BB23EED28800F29F31 /* NoteEdit */ = {
+			isa = PBXGroup;
+			children = (
+				11A5D4C023EED34D00F29F31 /* NoteEditViewController.swift */,
+			);
+			path = NoteEdit;
+			sourceTree = "<group>";
+		};
+		11A5D4E423F0153E00F29F31 /* ColorPicker */ = {
+			isa = PBXGroup;
+			children = (
+				11A5D4F123F021DE00F29F31 /* ColorPickerView.swift */,
+				11F9ACFF23F1731700D58163 /* ColorPickerViewController.swift */,
+				11F9AD0323F1749E00D58163 /* ColorPicker.storyboard */,
+			);
+			path = ColorPicker;
+			sourceTree = "<group>";
+		};
 		11D0054123D77BFE0053893E = {
 			isa = PBXGroup;
 			children = (
@@ -101,6 +153,8 @@
 				11D0056623D77C020053893E /* ya-notesTests */,
 				11D0057123D77C020053893E /* ya-notesUITests */,
 				11D0054B23D77BFE0053893E /* Products */,
+				755EF81A0C48E110E96A5A6C /* Pods */,
+				C4DADDCF7FA3ED0E6826A93B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -117,8 +171,13 @@
 		11D0054C23D77BFE0053893E /* ya-notes */ = {
 			isa = PBXGroup;
 			children = (
-				11117F6C23D857CB0034BCDF /* Model */,
+				11F9AD0523F1971A00D58163 /* Delegate */,
+				11F9ACFC23F1659700D58163 /* Extension */,
+				11F9ACFB23F1617500D58163 /* Palette */,
+				11A5D4E423F0153E00F29F31 /* ColorPicker */,
+				11A5D4BB23EED28800F29F31 /* NoteEdit */,
 				11D0054D23D77BFE0053893E /* AppDelegate.swift */,
+				11117F6C23D857CB0034BCDF /* Model */,
 				11D0054F23D77BFE0053893E /* SceneDelegate.swift */,
 				11D0055123D77BFE0053893E /* ViewController.swift */,
 				11D0055323D77BFE0053893E /* Main.storyboard */,
@@ -135,6 +194,7 @@
 			children = (
 				11D0056723D77C020053893E /* ya_notesTests.swift */,
 				11D0056923D77C020053893E /* Info.plist */,
+				112E30C723E585C9006FCF21 /* NoteExtensionTests.swift */,
 			);
 			path = "ya-notesTests";
 			sourceTree = "<group>";
@@ -148,6 +208,56 @@
 			path = "ya-notesUITests";
 			sourceTree = "<group>";
 		};
+		11F9ACFB23F1617500D58163 /* Palette */ = {
+			isa = PBXGroup;
+			children = (
+				11A5D4F923F0327500F29F31 /* PaletteView.swift */,
+			);
+			path = Palette;
+			sourceTree = "<group>";
+		};
+		11F9ACFC23F1659700D58163 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				11F9ACFD23F165AD00D58163 /* UIColorExtension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		11F9AD0523F1971A00D58163 /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				11F9AD0623F1972B00D58163 /* ColorDelegate.swift */,
+			);
+			path = Delegate;
+			sourceTree = "<group>";
+		};
+		755EF81A0C48E110E96A5A6C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8BBB9F5E3DADAE20693D24B5 /* Pods-ya-notes.debug.xcconfig */,
+				7E45794B71904EEBF1F35D5E /* Pods-ya-notes.release.xcconfig */,
+				D2217789F2B2E94CEE760FF0 /* Pods-ya-notes.adhoc.xcconfig */,
+				492B70351A6B32C57D27308B /* Pods-ya-notes-ya-notesUITests.debug.xcconfig */,
+				DEC43B5450ED807FC9B4B4E2 /* Pods-ya-notes-ya-notesUITests.release.xcconfig */,
+				D0906123108130A6A8136E3C /* Pods-ya-notes-ya-notesUITests.adhoc.xcconfig */,
+				8A24238E8F97A67FE6331D50 /* Pods-ya-notesTests.debug.xcconfig */,
+				9AA30B06B2DEE0EAE9963BC8 /* Pods-ya-notesTests.release.xcconfig */,
+				3F70359DDAF93A69985A79CB /* Pods-ya-notesTests.adhoc.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		C4DADDCF7FA3ED0E6826A93B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9ED88DB5ACB65C4C92ECFEFE /* libPods-ya-notes.a */,
+				333216A5EA1298212033CD41 /* libPods-ya-notes-ya-notesUITests.a */,
+				B9FBD38A856934A6F228730F /* libPods-ya-notesTests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -155,6 +265,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 11D0057723D77C020053893E /* Build configuration list for PBXNativeTarget "ya-notes" */;
 			buildPhases = (
+				591F774CAE8B9CE731121FE0 /* [CP] Check Pods Manifest.lock */,
 				11D0054623D77BFE0053893E /* Sources */,
 				11D0054723D77BFE0053893E /* Frameworks */,
 				11D0054823D77BFE0053893E /* Resources */,
@@ -172,6 +283,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 11D0057A23D77C020053893E /* Build configuration list for PBXNativeTarget "ya-notesTests" */;
 			buildPhases = (
+				945C130AF2A8F06877D35351 /* [CP] Check Pods Manifest.lock */,
 				11D0055F23D77C020053893E /* Sources */,
 				11D0056023D77C020053893E /* Frameworks */,
 				11D0056123D77C020053893E /* Resources */,
@@ -190,6 +302,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 11D0057D23D77C020053893E /* Build configuration list for PBXNativeTarget "ya-notesUITests" */;
 			buildPhases = (
+				BD7A52698BDDA59E4B6C47C0 /* [CP] Check Pods Manifest.lock */,
 				11D0056A23D77C020053893E /* Sources */,
 				11D0056B23D77C020053893E /* Frameworks */,
 				11D0056C23D77C020053893E /* Resources */,
@@ -254,6 +367,7 @@
 			files = (
 				11D0055D23D77C020053893E /* LaunchScreen.storyboard in Resources */,
 				11D0055A23D77C020053893E /* Assets.xcassets in Resources */,
+				11F9AD0423F1749E00D58163 /* ColorPicker.storyboard in Resources */,
 				11D0055523D77BFE0053893E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -274,6 +388,75 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		591F774CAE8B9CE731121FE0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ya-notes-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		945C130AF2A8F06877D35351 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ya-notesTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BD7A52698BDDA59E4B6C47C0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ya-notes-ya-notesUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		11D0054623D77BFE0053893E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -281,11 +464,17 @@
 			files = (
 				11117F6E23D857EA0034BCDF /* Note.swift in Sources */,
 				11117F7123D8618A0034BCDF /* NoteExtension.swift in Sources */,
+				11F9AD0123F1731700D58163 /* ColorPickerViewController.swift in Sources */,
 				11D0055223D77BFE0053893E /* ViewController.swift in Sources */,
+				11F9AD0723F1972B00D58163 /* ColorDelegate.swift in Sources */,
+				11A5D4C123EED34D00F29F31 /* NoteEditViewController.swift in Sources */,
 				11D0054E23D77BFE0053893E /* AppDelegate.swift in Sources */,
+				11A5D4F223F021DE00F29F31 /* ColorPickerView.swift in Sources */,
+				11A5D4FA23F0327500F29F31 /* PaletteView.swift in Sources */,
 				11D0055023D77BFE0053893E /* SceneDelegate.swift in Sources */,
 				11D0055823D77BFE0053893E /* ya_notes.xcdatamodeld in Sources */,
 				1187DFEB23D88DEA0035F1B8 /* FileNotebook.swift in Sources */,
+				11F9ACFE23F165AD00D58163 /* UIColorExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,6 +482,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				112E30C823E585C9006FCF21 /* NoteExtensionTests.swift in Sources */,
 				11D0056823D77C020053893E /* ya_notesTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -394,6 +584,7 @@
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "nikita.ya-notes";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -447,6 +638,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "nikita.ya-notes";
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
@@ -456,7 +648,9 @@
 		};
 		11D0057823D77C020053893E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8BBB9F5E3DADAE20693D24B5 /* Pods-ya-notes.debug.xcconfig */;
 			buildSettings = {
+				APP_DISPLAY_NAME = "ya-notes";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = YD3P24C4LT;
@@ -474,7 +668,9 @@
 		};
 		11D0057923D77C020053893E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7E45794B71904EEBF1F35D5E /* Pods-ya-notes.release.xcconfig */;
 			buildSettings = {
+				APP_DISPLAY_NAME = "ya-notes";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = YD3P24C4LT;
@@ -492,6 +688,7 @@
 		};
 		11D0057B23D77C020053893E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8A24238E8F97A67FE6331D50 /* Pods-ya-notesTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -513,6 +710,7 @@
 		};
 		11D0057C23D77C020053893E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9AA30B06B2DEE0EAE9963BC8 /* Pods-ya-notesTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -534,6 +732,7 @@
 		};
 		11D0057E23D77C020053893E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 492B70351A6B32C57D27308B /* Pods-ya-notes-ya-notesUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -553,6 +752,7 @@
 		};
 		11D0057F23D77C020053893E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DEC43B5450ED807FC9B4B4E2 /* Pods-ya-notes-ya-notesUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -570,6 +770,125 @@
 			};
 			name = Release;
 		};
+		11EF340E23E47B6800AFF9F5 /* Adhoc */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = "ADHOC=1";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "nikita.ya-notes-demo";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = ADHOC;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Adhoc;
+		};
+		11EF340F23E47B6800AFF9F5 /* Adhoc */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D2217789F2B2E94CEE760FF0 /* Pods-ya-notes.adhoc.xcconfig */;
+			buildSettings = {
+				APP_DISPLAY_NAME = "ya-notes-demo";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = YD3P24C4LT;
+				INFOPLIST_FILE = "ya-notes/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "nikita.ya-notes-demo";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Adhoc;
+		};
+		11EF341023E47B6800AFF9F5 /* Adhoc */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3F70359DDAF93A69985A79CB /* Pods-ya-notesTests.adhoc.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "ya-notesTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "nikita.ya-notesTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ya-notes.app/ya-notes";
+			};
+			name = Adhoc;
+		};
+		11EF341123E47B6800AFF9F5 /* Adhoc */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D0906123108130A6A8136E3C /* Pods-ya-notes-ya-notesUITests.adhoc.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "ya-notesUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "nikita.ya-notesUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "ya-notes";
+			};
+			name = Adhoc;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -578,6 +897,7 @@
 			buildConfigurations = (
 				11D0057523D77C020053893E /* Debug */,
 				11D0057623D77C020053893E /* Release */,
+				11EF340E23E47B6800AFF9F5 /* Adhoc */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -587,6 +907,7 @@
 			buildConfigurations = (
 				11D0057823D77C020053893E /* Debug */,
 				11D0057923D77C020053893E /* Release */,
+				11EF340F23E47B6800AFF9F5 /* Adhoc */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -596,6 +917,7 @@
 			buildConfigurations = (
 				11D0057B23D77C020053893E /* Debug */,
 				11D0057C23D77C020053893E /* Release */,
+				11EF341023E47B6800AFF9F5 /* Adhoc */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -605,6 +927,7 @@
 			buildConfigurations = (
 				11D0057E23D77C020053893E /* Debug */,
 				11D0057F23D77C020053893E /* Release */,
+				11EF341123E47B6800AFF9F5 /* Adhoc */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

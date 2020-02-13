@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import CocoaLumberjack
 
 class FileNotebook {
     
@@ -24,12 +25,15 @@ class FileNotebook {
     
     public func add(_ note: Note) throws {
         guard notes[note.uid] == nil else {
+            DDLogError("Note with id \(note.uid) could not be added, note with this uuid already exists")
             throw FileNotebookError.NoteAlreadyExists(message: "Note with \(note.uid) uid already exists")
         }
         notes[note.uid] = note
+        DDLogError("Note with id \(note.uid) is added")
     }
     
     public func remove(with uid: String) {
+        DDLogInfo("Note with id \(uid) is removed")
         notes.removeValue(forKey: uid)
     }
     
@@ -38,8 +42,9 @@ class FileNotebook {
             let notesJsonArray = notes.map { $0.value.json }
             let data = try JSONSerialization.data(withJSONObject: notesJsonArray, options: [])
             FileManager.default.createFile(atPath: fileNotebookPath.path, contents: data, attributes: nil)
+            DDLogInfo("Notes are saved to file")
         } catch let error {
-            print("Unable to save notes to file: \(error.localizedDescription)")
+            DDLogError("Unable to save notes to file: \(error.localizedDescription)")
         }
     }
     
@@ -54,8 +59,9 @@ class FileNotebook {
                     }
                 }
             }
+            DDLogInfo("Notes are loaded from file")
         } catch let error {
-            print("Unable to load notes from file: \(error.localizedDescription)")
+            DDLogError("Unable to load notes from file: \(error.localizedDescription)")
         }
     }
     

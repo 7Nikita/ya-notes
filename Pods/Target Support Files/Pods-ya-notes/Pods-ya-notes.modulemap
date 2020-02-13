@@ -1,0 +1,6 @@
+module Pods_ya_notes {
+  umbrella header "Pods-ya-notes-umbrella.h"
+
+  export *
+  module * { export * }
+}

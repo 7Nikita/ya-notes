@@ -6,7 +6,7 @@
 //  Copyright © 2020 Nikita Pekurin. All rights reserved.
 //
 
-import UIKit
+import UIKit.UIColor
 
 struct Note {
     let uid: String

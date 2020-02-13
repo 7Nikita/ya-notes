@@ -1,0 +1,6 @@
+module Pods_ya_notes_ya_notesUITests {
+  umbrella header "Pods-ya-notes-ya-notesUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

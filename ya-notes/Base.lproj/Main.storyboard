@@ -1,24 +1,207 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="PVl-QW-nY7">
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Note Edit View Controller-->
+        <scene sceneID="cIB-kj-pUa">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                <viewController id="PVl-QW-nY7" customClass="NoteEditViewController" customModule="ya_notes" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Im7-1o-S8F">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z1B-7C-0g6" userLabel="Main scroll view">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zzf-0J-n6n">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="OBA-2H-eiM" userLabel="Elements Stack View">
+                                                <rect key="frame" x="15" y="7" width="384" height="429"/>
+                                                <subviews>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter the title:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yhx-0o-yTy" userLabel="Title Text Field">
+                                                        <rect key="frame" x="0.0" y="0.0" width="384" height="34"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="hhV-IU-Rnd">
+                                                        <rect key="frame" x="0.0" y="49" width="384" height="33"/>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                        <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                    </textView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="144-Sv-h8C" userLabel="Destroy Date Stack View">
+                                                        <rect key="frame" x="0.0" y="97" width="384" height="247"/>
+                                                        <subviews>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Kl-BB-oXv" userLabel="Stack view">
+                                                                <rect key="frame" x="0.0" y="0.0" width="384" height="31"/>
+                                                                <subviews>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Use destroy date:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t8L-bW-5YI" userLabel="Use destroy date:">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="335" height="31"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                        <nil key="textColor"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="eYy-Qd-gdU">
+                                                                        <rect key="frame" x="335" y="0.0" width="51" height="31"/>
+                                                                        <connections>
+                                                                            <action selector="destroyDateSwitchValueChanged:" destination="PVl-QW-nY7" eventType="valueChanged" id="TId-dO-nX0"/>
+                                                                        </connections>
+                                                                    </switch>
+                                                                </subviews>
+                                                            </stackView>
+                                                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="F6D-8E-HOd">
+                                                                <rect key="frame" x="0.0" y="31" width="384" height="216"/>
+                                                            </datePicker>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="FTq-db-Ho1">
+                                                        <rect key="frame" x="0.0" y="359" width="384" height="70"/>
+                                                        <subviews>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gDE-PW-nyk" customClass="PaletteView" customModule="ya_notes">
+                                                                <rect key="frame" x="0.0" y="0.0" width="70" height="70"/>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <gestureRecognizers/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isChosen" value="YES"/>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                        <real key="value" value="2"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <outletCollection property="gestureRecognizers" destination="Gbs-MU-PF4" appends="YES" id="8Lb-Ig-eCx"/>
+                                                                </connections>
+                                                            </view>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zzc-ZY-JPo" customClass="PaletteView" customModule="ya_notes">
+                                                                <rect key="frame" x="104.66666666666669" y="0.0" width="70" height="70"/>
+                                                                <color key="backgroundColor" red="0.79494938380000002" green="0.1506932218" blue="0.1207086268" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <gestureRecognizers/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                        <real key="value" value="2"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <outletCollection property="gestureRecognizers" destination="bOZ-SH-NCg" appends="YES" id="YLh-nO-QGk"/>
+                                                                </connections>
+                                                            </view>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Rm-QI-M8B" customClass="PaletteView" customModule="ya_notes">
+                                                                <rect key="frame" x="209.33333333333334" y="0.0" width="70.000000000000028" height="70"/>
+                                                                <color key="backgroundColor" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <gestureRecognizers/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                        <real key="value" value="2"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <outletCollection property="gestureRecognizers" destination="6uh-iN-JTX" appends="YES" id="UBO-Ph-dDh"/>
+                                                                </connections>
+                                                            </view>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kMg-Jl-FVQ" customClass="PaletteView" customModule="ya_notes">
+                                                                <rect key="frame" x="314" y="0.0" width="70" height="70"/>
+                                                                <gestureRecognizers/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" secondItem="kMg-Jl-FVQ" secondAttribute="height" multiplier="1:1" id="amC-sI-NTO"/>
+                                                                    <constraint firstAttribute="height" constant="70" id="bkc-s7-7z9"/>
+                                                                </constraints>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isGradient" value="YES"/>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                        <real key="value" value="2"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <outletCollection property="gestureRecognizers" destination="jjc-KR-fIp" appends="YES" id="cBw-6k-oPh"/>
+                                                                    <outletCollection property="gestureRecognizers" destination="L7t-yh-2eW" appends="YES" id="ufL-Ry-6vO"/>
+                                                                </connections>
+                                                            </view>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstItem="Zzc-ZY-JPo" firstAttribute="width" secondItem="kMg-Jl-FVQ" secondAttribute="width" id="KPl-iv-buE"/>
+                                                            <constraint firstItem="0Rm-QI-M8B" firstAttribute="width" secondItem="kMg-Jl-FVQ" secondAttribute="width" id="Pe5-fB-Nip"/>
+                                                            <constraint firstItem="gDE-PW-nyk" firstAttribute="width" secondItem="kMg-Jl-FVQ" secondAttribute="width" id="gca-ym-jWJ"/>
+                                                        </constraints>
+                                                    </stackView>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="OBA-2H-eiM" secondAttribute="bottom" constant="300" id="Pec-wG-dB9"/>
+                                            <constraint firstAttribute="trailing" secondItem="OBA-2H-eiM" secondAttribute="trailing" constant="15" id="mro-pZ-FE9"/>
+                                            <constraint firstItem="OBA-2H-eiM" firstAttribute="leading" secondItem="zzf-0J-n6n" secondAttribute="leading" constant="15" id="ret-Hb-kPI"/>
+                                            <constraint firstItem="OBA-2H-eiM" firstAttribute="top" secondItem="zzf-0J-n6n" secondAttribute="top" constant="7" id="rrJ-H9-K62"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="zzf-0J-n6n" firstAttribute="top" secondItem="Z1B-7C-0g6" secondAttribute="top" id="Hh5-p1-7v3"/>
+                                    <constraint firstAttribute="bottom" secondItem="zzf-0J-n6n" secondAttribute="bottom" id="UZd-gJ-Xwy"/>
+                                    <constraint firstItem="zzf-0J-n6n" firstAttribute="leading" secondItem="Z1B-7C-0g6" secondAttribute="leading" id="edK-54-tra"/>
+                                    <constraint firstAttribute="trailing" secondItem="zzf-0J-n6n" secondAttribute="trailing" id="fc3-f7-Jtg"/>
+                                    <constraint firstItem="zzf-0J-n6n" firstAttribute="width" secondItem="Z1B-7C-0g6" secondAttribute="width" id="ghO-lU-qTk"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="ifW-TG-RQZ"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="1wg-4N-iHB"/>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="7jE-u2-ALa" firstAttribute="trailing" secondItem="Z1B-7C-0g6" secondAttribute="trailing" id="Izl-UL-kBn"/>
+                            <constraint firstItem="Z1B-7C-0g6" firstAttribute="top" secondItem="7jE-u2-ALa" secondAttribute="top" id="Rfl-6J-8TI"/>
+                            <constraint firstItem="7jE-u2-ALa" firstAttribute="bottom" secondItem="Z1B-7C-0g6" secondAttribute="bottom" id="hCd-TR-Ghi"/>
+                            <constraint firstItem="Z1B-7C-0g6" firstAttribute="leading" secondItem="7jE-u2-ALa" secondAttribute="leading" id="zb1-nq-Uk5"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="7jE-u2-ALa"/>
                     </view>
+                    <connections>
+                        <outlet property="contentTextView" destination="hhV-IU-Rnd" id="dE3-Um-uTW"/>
+                        <outlet property="customPaletteView" destination="kMg-Jl-FVQ" id="giw-9i-gaz"/>
+                        <outlet property="destroyDateLabel" destination="t8L-bW-5YI" id="Cac-PM-LDO"/>
+                        <outlet property="destroyDatePicker" destination="F6D-8E-HOd" id="yzF-ax-RQs"/>
+                        <outlet property="destroyDateSwitch" destination="eYy-Qd-gdU" id="iF2-6G-kIJ"/>
+                        <outlet property="elementsStackView" destination="OBA-2H-eiM" id="vDi-Tf-fm1"/>
+                        <outlet property="greenPaletteView" destination="0Rm-QI-M8B" id="5lH-hS-czb"/>
+                        <outlet property="mainScrollView" destination="Z1B-7C-0g6" id="cpW-iV-ugm"/>
+                        <outlet property="redPaletteView" destination="Zzc-ZY-JPo" id="5Ge-IW-bdn"/>
+                        <outlet property="whitePaletteView" destination="gDE-PW-nyk" id="nmK-Ap-gtk"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YXB-Qu-BPX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="Gbs-MU-PF4" userLabel="White Color Tap Gesture">
+                    <connections>
+                        <action selector="commonColorTapped:" destination="PVl-QW-nY7" id="a6d-b5-eP1"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="bOZ-SH-NCg" userLabel="Red Color Tap Gesture">
+                    <connections>
+                        <action selector="commonColorTapped:" destination="PVl-QW-nY7" id="JW7-i3-4yX"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="6uh-iN-JTX" userLabel="Green Color Tap Gesture">
+                    <connections>
+                        <action selector="commonColorTapped:" destination="PVl-QW-nY7" id="RNb-PQ-8Wy"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="jjc-KR-fIp" userLabel="Custom Color Long Press Gesture">
+                    <connections>
+                        <action selector="customColorLongTapped:" destination="PVl-QW-nY7" id="N8R-jC-96p"/>
+                    </connections>
+                </pongPressGestureRecognizer>
+                <tapGestureRecognizer id="L7t-yh-2eW" userLabel="Custom Color Tap Gesture">
+                    <connections>
+                        <action selector="commonColorTapped:" destination="PVl-QW-nY7" id="lzD-rg-OX7"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
+            <point key="canvasLocation" x="1034.7826086956522" y="136.60714285714286"/>
         </scene>
     </scenes>
 </document>
