@@ -72,7 +72,7 @@ class ColorPickerViewController: UIViewController {
         if let lastSelectedColor = lastSelectedColor {
             delegate?.passValue(of: lastSelectedColor)
         }
-        dismiss(animated: true)
+        navigationController?.popViewController(animated: true)
     }
     
     private func updateCurrentColor(for color: UIColor) {

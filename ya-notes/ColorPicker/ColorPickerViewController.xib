@@ -106,7 +106,7 @@
                 <constraint firstItem="UAj-xG-Run" firstAttribute="bottom" secondItem="cwG-yo-OX7" secondAttribute="bottom" constant="30" id="sVQ-my-dUW"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="UAj-xG-Run"/>
-            <point key="canvasLocation" x="304" y="105"/>
+            <point key="canvasLocation" x="302.89855072463769" y="104.46428571428571"/>
         </view>
     </objects>
 </document>
