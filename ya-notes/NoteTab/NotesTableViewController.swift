@@ -36,7 +36,6 @@ class NotesTableViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         notesTableView.register(UINib(nibName: "NoteTableViewCell", bundle: nil), forCellReuseIdentifier: "noteCell")
-        fileNotebook.add(Note(title: "kek", content: "rofl"))
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -49,9 +48,18 @@ class NotesTableViewController: UIViewController {
     }
     
     @objc private func addButtonTapped() {
+        let noteEditViewController = createNoteEditViewController()
+        navigationController?.pushViewController(noteEditViewController, animated: true)
+    }
+    
+    private func createNoteEditViewController() -> NoteEditViewController {
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
         let noteEditViewController = storyBoard.instantiateViewController(identifier: "NoteEditViewController")
-        navigationController?.pushViewController(noteEditViewController, animated: true)
+            as! NoteEditViewController
+        noteEditViewController.saveNoteHandler = { [weak self] note in
+            self?.fileNotebook.add(note)
+        }
+        return noteEditViewController
     }
 }
 
@@ -80,7 +88,9 @@ extension NotesTableViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        let noteEditViewController = createNoteEditViewController()
+        noteEditViewController.selectedNote = fileNotebook.notes[indexPath.row]
+        navigationController?.pushViewController(noteEditViewController, animated: true)
     }
 
 }
