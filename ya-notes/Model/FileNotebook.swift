@@ -24,6 +24,7 @@ class FileNotebook {
             if element.uid == note.uid {
                 notes[index] = note
                 DDLogInfo("Note with id \(note.uid) is overwritten")
+                return
             }
         }
         notes.append(note)
