@@ -6,4 +6,6 @@
 //  Copyright © 2020 Nikita Pekurin. All rights reserved.
 //
 
-import Foundation
+enum NetworkError {
+    case unreachable
+}
