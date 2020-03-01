@@ -29,7 +29,9 @@ class LoadNotesOperation: AsyncOperation {
             let loadFromBackend = LoadNotesBackendOperation()
             loadFromBackend.completionBlock = {
                 switch loadFromBackend.result! {
-                case .success:
+                case .success(let notes):
+                    notebook.update(for: notes)
+                    notebook.saveToFile()
                     self.result = true
                 case .failure:
                     self.result = false

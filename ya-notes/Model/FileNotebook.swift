@@ -64,4 +64,9 @@ class FileNotebook {
         }
     }
     
+    public func update(for notes: [Note]) {
+        self.notes = notes
+        DDLogInfo("Notes have been updated")
+    }
+    
 }
