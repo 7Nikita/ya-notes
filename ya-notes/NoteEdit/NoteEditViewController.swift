@@ -51,7 +51,7 @@ class NoteEditViewController : UIViewController {
         if let note = selectedNote {
             titleTextField.text = note.title
             contentTextView.text = note.content
-            passValue(of: note.color)
+            handleColorPickerColorChanged(of: note.color)
             customPaletteView.backgroundColor = note.color
             if let date = note.selfDestructionDate {
                 destroyDateSwitch.isOn = true
@@ -113,7 +113,7 @@ class NoteEditViewController : UIViewController {
 }
 
 extension NoteEditViewController : ColorDelegate {
-    func passValue(of color: UIColor) {
+    func handleColorPickerColorChanged(of color: UIColor) {
         markChosenColor(for: customPaletteView)
         if lastChosenPaletteView.isGradient {
             lastChosenPaletteView.isGradient = false

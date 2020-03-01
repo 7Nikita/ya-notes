@@ -9,5 +9,5 @@
 import UIKit.UIColor
 
 protocol ColorDelegate: class {
-    func passValue(of color: UIColor)
+    func handleColorPickerColorChanged(of color: UIColor)
 }
