@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="PVl-QW-nY7">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="c8g-69-WsE">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
@@ -7,16 +7,179 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Tab Bar Controller-->
+        <scene sceneID="9Wk-sS-BSs">
+            <objects>
+                <tabBarController id="c8g-69-WsE" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="veA-zH-g67">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="Cwu-Sh-1wV" kind="relationship" relationship="viewControllers" id="0mh-4P-H2c"/>
+                        <segue destination="IKX-qa-joB" kind="relationship" relationship="viewControllers" id="5yA-wt-B4c"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PVQ-Ic-EdB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-425" y="64"/>
+        </scene>
+        <!--Галерея-->
+        <scene sceneID="jvF-nn-b82">
+            <objects>
+                <navigationController id="IKX-qa-joB" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Галерея" image="galleryTabPic" id="TIE-vp-eBH"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="r0S-yA-tbM">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="jVw-w8-V2B" kind="relationship" relationship="rootViewController" id="UdA-Lg-Iiz"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8is-x4-J1l" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="887" y="512"/>
+        </scene>
+        <!--Галерея-->
+        <scene sceneID="ey0-bs-apj">
+            <objects>
+                <viewController id="jVw-w8-V2B" customClass="GalleryViewController" customModule="ya_notes" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1jb-a1-pS3">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="DOC-uL-h2b">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="Eai-tz-ECE">
+                                    <size key="itemSize" width="112" height="112"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="8" minY="8" maxX="8" maxY="8"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="DOC-uL-h2b" firstAttribute="bottom" secondItem="OJk-Ye-Y1x" secondAttribute="bottom" id="COb-cx-Eab"/>
+                            <constraint firstItem="DOC-uL-h2b" firstAttribute="top" secondItem="OJk-Ye-Y1x" secondAttribute="top" id="krT-aa-LPX"/>
+                            <constraint firstItem="DOC-uL-h2b" firstAttribute="leading" secondItem="OJk-Ye-Y1x" secondAttribute="leading" id="sof-Qh-Lhr"/>
+                            <constraint firstItem="DOC-uL-h2b" firstAttribute="trailing" secondItem="OJk-Ye-Y1x" secondAttribute="trailing" id="sr8-y5-TCL"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="OJk-Ye-Y1x"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Галерея" id="g7k-nv-ljS">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="HMs-wi-6iJ"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="addBarButton" destination="HMs-wi-6iJ" id="igR-Pd-Uf0"/>
+                        <outlet property="galleryCollectionView" destination="DOC-uL-h2b" id="sN9-gH-JXt"/>
+                        <segue destination="Ats-gm-MjX" kind="show" identifier="showImagePreviewViewController" id="W4l-Sj-IIg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jA7-rD-zqi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1993" y="512"/>
+        </scene>
+        <!--Image Preview View Controller-->
+        <scene sceneID="2dP-a8-XFS">
+            <objects>
+                <viewController storyboardIdentifier="ImagePreviewViewController" id="Ats-gm-MjX" customClass="ImagePreviewViewController" customModule="ya_notes" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="AQv-ES-ATX">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hrh-7l-O6x">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="hrh-7l-O6x" firstAttribute="bottom" secondItem="ezY-Lp-kl6" secondAttribute="bottom" id="6Hn-c0-W4g"/>
+                            <constraint firstItem="hrh-7l-O6x" firstAttribute="trailing" secondItem="ezY-Lp-kl6" secondAttribute="trailing" id="FJV-FQ-B0Y"/>
+                            <constraint firstItem="hrh-7l-O6x" firstAttribute="leading" secondItem="ezY-Lp-kl6" secondAttribute="leading" id="so7-pq-XvC"/>
+                            <constraint firstItem="hrh-7l-O6x" firstAttribute="top" secondItem="ezY-Lp-kl6" secondAttribute="top" id="zLa-az-uzY"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ezY-Lp-kl6"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="7OS-zK-znX"/>
+                    <connections>
+                        <outlet property="galleryScrollView" destination="hrh-7l-O6x" id="aDz-ee-Nkv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2G6-Sm-B80" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2957" y="512"/>
+        </scene>
+        <!--Заметки-->
+        <scene sceneID="dVl-Ai-YDC">
+            <objects>
+                <navigationController id="Cwu-Sh-1wV" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Заметки" image="noteTabPic" id="vHD-Nu-h7y"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="C5l-Rk-RDt">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="cwf-EV-G0S" kind="relationship" relationship="rootViewController" id="XgV-Ad-aio"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="w4p-FO-5ay" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="887" y="-336"/>
+        </scene>
+        <!--Заметки-->
+        <scene sceneID="HBR-2r-p8f">
+            <objects>
+                <viewController id="cwf-EV-G0S" customClass="NotesTableViewController" customModule="ya_notes" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="UT4-2T-Yet">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="lzQ-6c-qaF">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="lzQ-6c-qaF" firstAttribute="bottom" secondItem="qPw-i0-KgK" secondAttribute="bottom" id="Jn9-DH-YHF"/>
+                            <constraint firstItem="lzQ-6c-qaF" firstAttribute="leading" secondItem="qPw-i0-KgK" secondAttribute="leading" id="OwD-Qa-O5b"/>
+                            <constraint firstItem="lzQ-6c-qaF" firstAttribute="top" secondItem="qPw-i0-KgK" secondAttribute="top" id="Zg5-mn-fCe"/>
+                            <constraint firstItem="lzQ-6c-qaF" firstAttribute="trailing" secondItem="qPw-i0-KgK" secondAttribute="trailing" id="t6A-Si-B1R"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="qPw-i0-KgK"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Заметки" id="BCo-jm-QbY">
+                        <barButtonItem key="leftBarButtonItem" systemItem="edit" id="5W6-qt-wbP"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="4vo-W6-UVI"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="addButton" destination="4vo-W6-UVI" id="ucU-lv-1JI"/>
+                        <outlet property="editButton" destination="5W6-qt-wbP" id="B8P-fm-bRl"/>
+                        <outlet property="notesTableView" destination="lzQ-6c-qaF" id="el3-zt-Jl6"/>
+                        <segue destination="PVl-QW-nY7" kind="show" identifier="showNoteEditViewController" id="MMO-xM-RYT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zFq-YZ-2Nl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1992.753623188406" y="-336.16071428571428"/>
+        </scene>
         <!--Note Edit View Controller-->
         <scene sceneID="cIB-kj-pUa">
             <objects>
-                <viewController id="PVl-QW-nY7" customClass="NoteEditViewController" customModule="ya_notes" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NoteEditViewController" id="PVl-QW-nY7" customClass="NoteEditViewController" customModule="ya_notes" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Im7-1o-S8F">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z1B-7C-0g6" userLabel="Main scroll view">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zzf-0J-n6n">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
@@ -161,6 +324,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="7jE-u2-ALa"/>
                     </view>
+                    <navigationItem key="navigationItem" id="bXC-fz-Fpq">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="wUR-Ns-kJ5"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="contentTextView" destination="hhV-IU-Rnd" id="dE3-Um-uTW"/>
                         <outlet property="customPaletteView" destination="kMg-Jl-FVQ" id="giw-9i-gaz"/>
@@ -171,6 +337,8 @@
                         <outlet property="greenPaletteView" destination="0Rm-QI-M8B" id="5lH-hS-czb"/>
                         <outlet property="mainScrollView" destination="Z1B-7C-0g6" id="cpW-iV-ugm"/>
                         <outlet property="redPaletteView" destination="Zzc-ZY-JPo" id="5Ge-IW-bdn"/>
+                        <outlet property="saveBarButton" destination="wUR-Ns-kJ5" id="Zoc-ma-Ydo"/>
+                        <outlet property="titleTextField" destination="yhx-0o-yTy" id="ldH-SW-JtG"/>
                         <outlet property="whitePaletteView" destination="gDE-PW-nyk" id="nmK-Ap-gtk"/>
                     </connections>
                 </viewController>
@@ -201,7 +369,11 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1034.7826086956522" y="136.60714285714286"/>
+            <point key="canvasLocation" x="2957" y="-336"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="galleryTabPic" width="21.333333969116211" height="21.333333969116211"/>
+        <image name="noteTabPic" width="21.333333969116211" height="21.333333969116211"/>
+    </resources>
 </document>

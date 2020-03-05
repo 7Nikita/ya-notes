@@ -11,35 +11,32 @@ import CocoaLumberjack
 
 class FileNotebook {
     
-    enum FileNotebookError: Error {
-        case NoteAlreadyExists(message: String)
-    }
-    
     private let fileName = "Notes.json"
     private let cachesDirectoryPath = FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask).first!
     private var fileNotebookPath: URL {
         cachesDirectoryPath.appendingPathComponent(fileName)
     }
     
-    private(set) var notes = [String: Note]()
+    private(set) var notes = [Note]()
     
-    public func add(_ note: Note) throws {
-        guard notes[note.uid] == nil else {
-            DDLogError("Note with id \(note.uid) could not be added, note with this uuid already exists")
-            throw FileNotebookError.NoteAlreadyExists(message: "Note with \(note.uid) uid already exists")
+    public func add(_ note: Note) {
+        if let index = notes.firstIndex(where: { $0.uid == note.uid }) {
+            notes[index] = note
+            DDLogInfo("Note with id \(note.uid) is overwritten")
+            return
         }
-        notes[note.uid] = note
+        notes.append(note)
         DDLogError("Note with id \(note.uid) is added")
     }
     
     public func remove(with uid: String) {
+        notes.removeAll(where: { $0.uid == uid })
         DDLogInfo("Note with id \(uid) is removed")
-        notes.removeValue(forKey: uid)
     }
     
     public func saveToFile() {
         do {
-            let notesJsonArray = notes.map { $0.value.json }
+            let notesJsonArray = notes.map { $0.json }
             let data = try JSONSerialization.data(withJSONObject: notesJsonArray, options: [])
             FileManager.default.createFile(atPath: fileNotebookPath.path, contents: data, attributes: nil)
             DDLogInfo("Notes are saved to file")
@@ -55,7 +52,7 @@ class FileNotebook {
                 let jsonData = try JSONSerialization.jsonObject(with: data, options: []) as? [[String: Any]] {
                 for noteJson in jsonData {
                     if let note = Note.parse(json: noteJson) {
-                        try self.add(note)
+                        self.add(note)
                     }
                 }
             }

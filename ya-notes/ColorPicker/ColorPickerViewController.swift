@@ -70,9 +70,9 @@ class ColorPickerViewController: UIViewController {
     
     @IBAction func doneButtonePressed(_ sender: UIButton) {
         if let lastSelectedColor = lastSelectedColor {
-            delegate?.passValue(of: lastSelectedColor)
+            delegate?.handleColorPickerColorChanged(of: lastSelectedColor)
         }
-        dismiss(animated: true)
+        navigationController?.popViewController(animated: true)
     }
     
     private func updateCurrentColor(for color: UIColor) {

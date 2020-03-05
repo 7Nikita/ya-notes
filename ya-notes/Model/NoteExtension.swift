@@ -25,7 +25,7 @@ extension Note {
         ]
         
         if color != .white {
-            json[Note.content] = getComponentsFromColor(color: color)
+            json[Note.color] = getComponentsFromColor(color: color)
         }
         
         if importance != .regular {
