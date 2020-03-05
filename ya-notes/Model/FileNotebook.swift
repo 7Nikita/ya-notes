@@ -20,12 +20,10 @@ class FileNotebook {
     private(set) var notes = [Note]()
     
     public func add(_ note: Note) {
-        for (index, element) in notes.enumerated() {
-            if element.uid == note.uid {
-                notes[index] = note
-                DDLogInfo("Note with id \(note.uid) is overwritten")
-                return
-            }
+        if let index = notes.firstIndex(where: { $0.uid == note.uid }) {
+            notes[index] = note
+            DDLogInfo("Note with id \(note.uid) is overwritten")
+            return
         }
         notes.append(note)
         DDLogError("Note with id \(note.uid) is added")

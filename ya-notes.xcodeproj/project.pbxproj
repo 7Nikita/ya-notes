@@ -14,6 +14,7 @@
 		1134544123FD62B100823DE4 /* GalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1134544023FD62B100823DE4 /* GalleryViewController.swift */; };
 		1134544823FD851000823DE4 /* GalleryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1134544623FD851000823DE4 /* GalleryCollectionViewCell.swift */; };
 		1134544B23FD874D00823DE4 /* ImagePreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1134544A23FD874D00823DE4 /* ImagePreviewViewController.swift */; };
+		113B44D62411597E00CE29B9 /* StoryboardExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113B44D52411597E00CE29B9 /* StoryboardExtension.swift */; };
 		114493C623F95CF7004EE798 /* NoteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114493C423F95CF7004EE798 /* NoteTableViewCell.swift */; };
 		114493C723F95CF7004EE798 /* NoteTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 114493C523F95CF7004EE798 /* NoteTableViewCell.xib */; };
 		114493C923F960F4004EE798 /* NotesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114493C823F960F4004EE798 /* NotesTableViewController.swift */; };
@@ -62,6 +63,7 @@
 		1134544023FD62B100823DE4 /* GalleryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryViewController.swift; sourceTree = "<group>"; };
 		1134544623FD851000823DE4 /* GalleryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryCollectionViewCell.swift; sourceTree = "<group>"; };
 		1134544A23FD874D00823DE4 /* ImagePreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePreviewViewController.swift; sourceTree = "<group>"; };
+		113B44D52411597E00CE29B9 /* StoryboardExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardExtension.swift; sourceTree = "<group>"; };
 		114493C423F95CF7004EE798 /* NoteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteTableViewCell.swift; sourceTree = "<group>"; };
 		114493C523F95CF7004EE798 /* NoteTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoteTableViewCell.xib; sourceTree = "<group>"; };
 		114493C823F960F4004EE798 /* NotesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesTableViewController.swift; sourceTree = "<group>"; };
@@ -136,6 +138,7 @@
 				11117F7023D8618A0034BCDF /* NoteExtension.swift */,
 				11117F6D23D857EA0034BCDF /* Note.swift */,
 				1187DFEA23D88DEA0035F1B8 /* FileNotebook.swift */,
+				113B44D52411597E00CE29B9 /* StoryboardExtension.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -502,6 +505,7 @@
 				1134544823FD851000823DE4 /* GalleryCollectionViewCell.swift in Sources */,
 				11117F6E23D857EA0034BCDF /* Note.swift in Sources */,
 				1134544123FD62B100823DE4 /* GalleryViewController.swift in Sources */,
+				113B44D62411597E00CE29B9 /* StoryboardExtension.swift in Sources */,
 				11117F7123D8618A0034BCDF /* NoteExtension.swift in Sources */,
 				11F9AD0723F1972B00D58163 /* ColorDelegate.swift in Sources */,
 				114493C623F95CF7004EE798 /* NoteTableViewCell.swift in Sources */,

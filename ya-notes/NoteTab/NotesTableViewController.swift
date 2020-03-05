@@ -10,6 +10,10 @@ import UIKit
 
 class NotesTableViewController: UIViewController {
     
+    let noteCellReuseIdentifier = "noteCell"
+    let noteTableViewCellNibName = "NoteTableViewCell"
+    let noteEditViewControllerIdentifier = "NoteEditViewController"
+    
     private let fileNotebook = FileNotebook()
     
     @IBOutlet weak var notesTableView: UITableView! {
@@ -35,7 +39,8 @@ class NotesTableViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        notesTableView.register(UINib(nibName: "NoteTableViewCell", bundle: nil), forCellReuseIdentifier: "noteCell")
+        notesTableView.register(UINib(nibName: noteTableViewCellNibName, bundle: nil),
+                                forCellReuseIdentifier: noteCellReuseIdentifier)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -53,8 +58,8 @@ class NotesTableViewController: UIViewController {
     }
     
     private func createNoteEditViewController() -> NoteEditViewController {
-        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-        let noteEditViewController = storyBoard.instantiateViewController(identifier: "NoteEditViewController")
+        let noteEditViewController = UIStoryboard.instantiateViewController(storyboardIdentifier: "Main",
+                                                                            viewControllerIdentifier: noteEditViewControllerIdentifier)
             as! NoteEditViewController
         noteEditViewController.saveNoteHandler = { [weak self] note in
             self?.fileNotebook.add(note)
@@ -78,8 +83,7 @@ extension NotesTableViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let note = fileNotebook.notes[indexPath.row]
-        
-        let cell = tableView.dequeueReusableCell(withIdentifier: "noteCell", for: indexPath) as! NoteTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: noteCellReuseIdentifier, for: indexPath) as! NoteTableViewCell
         cell.colorView.backgroundColor = note.color
         cell.titleLable.text = note.title
         cell.contentLabel.text = note.content
@@ -92,5 +96,5 @@ extension NotesTableViewController: UITableViewDataSource, UITableViewDelegate {
         noteEditViewController.selectedNote = fileNotebook.notes[indexPath.row]
         navigationController?.pushViewController(noteEditViewController, animated: true)
     }
-
+    
 }
