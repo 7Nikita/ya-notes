@@ -10,10 +10,14 @@ import UIKit
 
 class NotesTableViewController: UIViewController {
     
-    private let fileNotebook = FileNotebook()
+    let noteCellReuseIdentifier = "noteCell"
+    let noteTableViewCellNibName = "NoteTableViewCell"
+    let noteEditViewControllerIdentifier = "NoteEditViewController"
+    
     private let notesQueue = OperationQueue()
     private let dbQueue = OperationQueue()
     private let backendQueue = OperationQueue()
+    private let fileNotebook = FileNotebook()
     
     @IBOutlet weak var notesTableView: UITableView! {
         didSet {
@@ -39,7 +43,8 @@ class NotesTableViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         loadNotes()
-        notesTableView.register(UINib(nibName: "NoteTableViewCell", bundle: nil), forCellReuseIdentifier: "noteCell")
+        notesTableView.register(UINib(nibName: noteTableViewCellNibName, bundle: nil),
+                                forCellReuseIdentifier: noteCellReuseIdentifier)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -69,8 +74,8 @@ class NotesTableViewController: UIViewController {
     }
     
     private func createNoteEditViewController() -> NoteEditViewController {
-        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-        let noteEditViewController = storyBoard.instantiateViewController(identifier: "NoteEditViewController")
+        let noteEditViewController = UIStoryboard.instantiateViewController(storyboardIdentifier: "Main",
+                                                                            viewControllerIdentifier: noteEditViewControllerIdentifier)
             as! NoteEditViewController
         noteEditViewController.saveNoteHandler = { [weak self] note in
             if let self = self {
@@ -94,8 +99,8 @@ extension NotesTableViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            let noteUid = fileNotebook.notes[indexPath.row].uid
-            removeNote(for: noteUid, cellForRowAt: indexPath)
+            fileNotebook.remove(with: fileNotebook.notes[indexPath.row].uid)
+            tableView.deleteRows(at: [indexPath], with: .fade)
         }
     }
     
@@ -105,8 +110,7 @@ extension NotesTableViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let note = fileNotebook.notes[indexPath.row]
-        
-        let cell = tableView.dequeueReusableCell(withIdentifier: "noteCell", for: indexPath) as! NoteTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: noteCellReuseIdentifier, for: indexPath) as! NoteTableViewCell
         cell.colorView.backgroundColor = note.color
         cell.titleLable.text = note.title
         cell.contentLabel.text = note.content
@@ -119,8 +123,7 @@ extension NotesTableViewController: UITableViewDataSource, UITableViewDelegate {
         noteEditViewController.selectedNote = fileNotebook.notes[indexPath.row]
         navigationController?.pushViewController(noteEditViewController, animated: true)
     }
-    
-    
+        
     private func removeNote(for noteUid: String, cellForRowAt indexPath: IndexPath) {
         let removeNoteOperation = RemoveNoteOperation(noteId: noteUid,
                                                       notebook: fileNotebook,
@@ -133,4 +136,5 @@ extension NotesTableViewController: UITableViewDataSource, UITableViewDelegate {
         }
         notesQueue.addOperation(removeNoteOperation)
     }
+
 }

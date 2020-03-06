@@ -48,17 +48,7 @@ class NoteEditViewController : UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         lastChosenPaletteView = whitePaletteView
-        if let note = selectedNote {
-            titleTextField.text = note.title
-            contentTextView.text = note.content
-            passValue(of: note.color)
-            customPaletteView.backgroundColor = note.color
-            if let date = note.selfDestructionDate {
-                destroyDateSwitch.isOn = true
-                destroyDatePicker.isHidden = false
-                destroyDatePicker.date = date
-            }
-        }
+        initWithNote(note: selectedNote)
     }
     
     @IBAction func destroyDateSwitchValueChanged(_ sender: UISwitch) {
@@ -78,6 +68,20 @@ class NoteEditViewController : UIViewController {
             colorPickerViewController.delegate = self
             navigationController?.pushViewController(colorPickerViewController, animated: true)
         }
+    }
+    
+    private func initWithNote(note: Note?) {
+        guard let note = selectedNote else { return }
+        titleTextField.text = note.title
+        contentTextView.text = note.content
+        handleColorPickerColorChanged(of: note.color)
+        customPaletteView.backgroundColor = note.color
+        if let date = note.selfDestructionDate {
+            destroyDateSwitch.isOn = true
+            destroyDatePicker.isHidden = false
+            destroyDatePicker.date = date
+        }
+        
     }
     
     private func markChosenColor(for view: PaletteView?) {
@@ -113,7 +117,7 @@ class NoteEditViewController : UIViewController {
 }
 
 extension NoteEditViewController : ColorDelegate {
-    func passValue(of color: UIColor) {
+    func handleColorPickerColorChanged(of color: UIColor) {
         markChosenColor(for: customPaletteView)
         if lastChosenPaletteView.isGradient {
             lastChosenPaletteView.isGradient = false

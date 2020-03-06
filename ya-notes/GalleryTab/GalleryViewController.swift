@@ -10,9 +10,20 @@ import UIKit
 
 class GalleryViewController: UIViewController {
     
+    let imageCellReuseIdentifier = "imageCell"
+    let imageCellNibName = "GalleryCollectionViewCell"
+    let imagePreviewViewControllerIdentifier = "ImagePreviewViewController"
+    
     var images: [UIImage] = []
     
-    @IBOutlet weak var galleryCollectionView: UICollectionView!
+    @IBOutlet weak var galleryCollectionView: UICollectionView! {
+        didSet {
+            galleryCollectionView.delegate = self
+            galleryCollectionView.dataSource = self
+            galleryCollectionView.register(UINib(nibName: imageCellNibName, bundle: nil),
+                                           forCellWithReuseIdentifier: imageCellReuseIdentifier)
+        }
+    }
     
     @IBOutlet weak var addBarButton: UIBarButtonItem! {
         didSet {
@@ -23,10 +34,6 @@ class GalleryViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        galleryCollectionView.delegate = self
-        galleryCollectionView.dataSource = self
-        galleryCollectionView.register(UINib(nibName: "GalleryCollectionViewCell", bundle: nil),
-                                       forCellWithReuseIdentifier: "imageCell")
     }
     
 }
@@ -99,15 +106,15 @@ extension GalleryViewController: UICollectionViewDelegate, UICollectionViewDataS
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "imageCell", for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: imageCellReuseIdentifier, for: indexPath)
             as! GalleryCollectionViewCell
         cell.imageView.image = images[indexPath.item]
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-        let imagePreviewViewController = storyBoard.instantiateViewController(identifier: "ImagePreviewViewController")
+        let imagePreviewViewController = UIStoryboard.instantiateViewController(storyboardIdentifier: "Main",
+                                                                                viewControllerIdentifier: imagePreviewViewControllerIdentifier)
             as! ImagePreviewViewController
         imagePreviewViewController.images = images
         imagePreviewViewController.selectedImageIndex = indexPath.row
