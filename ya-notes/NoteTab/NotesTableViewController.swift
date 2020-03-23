@@ -14,6 +14,7 @@ class NotesTableViewController: UIViewController {
     let noteTableViewCellNibName = "NoteTableViewCell"
     let noteEditViewControllerIdentifier = "NoteEditViewController"
     
+    private let githubService = GithubService()
     private let notesQueue = OperationQueue()
     private let dbQueue = OperationQueue()
     private let backendQueue = OperationQueue()
@@ -42,9 +43,15 @@ class NotesTableViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadNotes()
         notesTableView.register(UINib(nibName: noteTableViewCellNibName, bundle: nil),
                                 forCellReuseIdentifier: noteCellReuseIdentifier)
+        
+        if NetworkService.isConnectedToNetwork() && githubService.getGithubToken() == nil {
+            createGithubViewController()
+        } else {
+            loadNotes()
+        }
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -59,6 +66,12 @@ class NotesTableViewController: UIViewController {
     @objc private func addButtonTapped() {
         let noteEditViewController = createNoteEditViewController()
         navigationController?.pushViewController(noteEditViewController, animated: true)
+    }
+    
+    private func createGithubViewController() {
+        let githubViewController = GithubViewController()
+        githubViewController.delegate = self
+        present(githubViewController, animated: true)
     }
     
     private func loadNotes() {
@@ -99,8 +112,7 @@ extension NotesTableViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            fileNotebook.remove(with: fileNotebook.notes[indexPath.row].uid)
-            tableView.deleteRows(at: [indexPath], with: .fade)
+            removeNote(for: fileNotebook.notes[indexPath.row].uid, cellForRowAt: indexPath)
         }
     }
     
@@ -131,10 +143,17 @@ extension NotesTableViewController: UITableViewDataSource, UITableViewDelegate {
                                                       dbQueue: dbQueue)
         removeNoteOperation.completionBlock = {
             OperationQueue.main.addOperation {
-                self.notesTableView.deleteRows(at: [indexPath], with: .fade)
+                self.notesTableView.reloadData()
             }
         }
         notesQueue.addOperation(removeNoteOperation)
     }
 
+}
+
+extension NotesTableViewController: GithubViewControllerDelegate {
+    func handleTokenChanged(token: String) {
+        githubService.saveGithubToken(value: token)
+        loadNotes()
+    }
 }

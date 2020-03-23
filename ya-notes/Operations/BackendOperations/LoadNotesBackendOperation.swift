@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import CocoaLumberjack
 
 enum LoadNotesBackendResult {
     case success([Note])
@@ -14,10 +15,30 @@ enum LoadNotesBackendResult {
 }
 
 class LoadNotesBackendOperation: BaseBackendOperation {
+    
+    let githubService = GithubService()
+    
     var result: LoadNotesBackendResult?
     
     override func main() {
-        result = .failure(.unreachable)
-        finish()
+        guard NetworkService.isConnectedToNetwork() else {
+            result = .failure(.unreachable)
+            finish()
+            return
+        }
+        
+        func getGistContentCompletionBlock(value: [Note]?) {
+            if let value = value {
+                result = .success(value)
+            } else {
+                result = .failure(.unreachable)
+            }
+            finish()
+        }
+        
+        githubService.getGistDbId(completion: { [weak self] in
+            self?.githubService.getGistContent(completion: getGistContentCompletionBlock)
+        })
+        
     }
 }

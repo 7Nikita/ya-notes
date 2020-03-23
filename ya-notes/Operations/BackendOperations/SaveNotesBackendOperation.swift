@@ -14,6 +14,9 @@ enum SaveNotesBackendResult {
 }
 
 class SaveNotesBackendOperation: BaseBackendOperation {
+    
+    let githubService = GithubService()
+    
     var result: SaveNotesBackendResult?
     var notes: [Note]?
     
@@ -23,7 +26,18 @@ class SaveNotesBackendOperation: BaseBackendOperation {
     }
     
     override func main() {
-        result = .failure(.unreachable)
+        guard NetworkService.isConnectedToNetwork() else {
+            result = .failure(.unreachable)
+            finish()
+            return
+        }
+        
+        if (UserDefaults.standard.object(forKey: "gistId") as? String) != nil {
+            githubService.updateGists(notes: notes)
+        } else {
+            githubService.uploadGists(notes: notes)
+        }
+        result = .success
         finish()
     }
 }

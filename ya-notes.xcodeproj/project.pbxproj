@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		02E337D40CF6AE591C84DBEE /* libPods-ya-notes.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9ED88DB5ACB65C4C92ECFEFE /* libPods-ya-notes.a */; };
+		110EC7272414FAB2005FAEB0 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110EC7262414FAB2005FAEB0 /* NetworkService.swift */; };
+		110EC7292414FCED005FAEB0 /* GithubService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110EC7282414FCED005FAEB0 /* GithubService.swift */; };
+		110EC72C2414FDA8005FAEB0 /* GithubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110EC72B2414FDA8005FAEB0 /* GithubViewController.swift */; };
+		110EC72E24150DA0005FAEB0 /* GistId.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110EC72D24150DA0005FAEB0 /* GistId.swift */; };
 		11117F6E23D857EA0034BCDF /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11117F6D23D857EA0034BCDF /* Note.swift */; };
 		11117F7123D8618A0034BCDF /* NoteExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11117F7023D8618A0034BCDF /* NoteExtension.swift */; };
 		112E30C823E585C9006FCF21 /* NoteExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112E30C723E585C9006FCF21 /* NoteExtensionTests.swift */; };
@@ -19,6 +23,8 @@
 		114493C723F95CF7004EE798 /* NoteTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 114493C523F95CF7004EE798 /* NoteTableViewCell.xib */; };
 		114493C923F960F4004EE798 /* NotesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114493C823F960F4004EE798 /* NotesTableViewController.swift */; };
 		1153B3A424016B5B000FAC32 /* GalleryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1153B3A324016B5B000FAC32 /* GalleryCollectionViewCell.xib */; };
+		115AA6472413BE1A00131F7C /* Gist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115AA6462413BE1A00131F7C /* Gist.swift */; };
+		115AA6492413BE8800131F7C /* GistFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115AA6482413BE8800131F7C /* GistFile.swift */; };
 		1187DFEB23D88DEA0035F1B8 /* FileNotebook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1187DFEA23D88DEA0035F1B8 /* FileNotebook.swift */; };
 		1190F66E23F5B3D4001D002E /* ColorPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1190F66C23F5B3D4001D002E /* ColorPickerViewController.swift */; };
 		1190F66F23F5B3D4001D002E /* ColorPickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1190F66D23F5B3D4001D002E /* ColorPickerViewController.xib */; };
@@ -69,6 +75,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		110EC7262414FAB2005FAEB0 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		110EC7282414FCED005FAEB0 /* GithubService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubService.swift; sourceTree = "<group>"; };
+		110EC72B2414FDA8005FAEB0 /* GithubViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubViewController.swift; sourceTree = "<group>"; };
+		110EC72D24150DA0005FAEB0 /* GistId.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistId.swift; sourceTree = "<group>"; };
 		11117F6D23D857EA0034BCDF /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
 		11117F7023D8618A0034BCDF /* NoteExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteExtension.swift; sourceTree = "<group>"; };
 		112E30C723E585C9006FCF21 /* NoteExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteExtensionTests.swift; sourceTree = "<group>"; };
@@ -80,6 +90,8 @@
 		114493C523F95CF7004EE798 /* NoteTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoteTableViewCell.xib; sourceTree = "<group>"; };
 		114493C823F960F4004EE798 /* NotesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesTableViewController.swift; sourceTree = "<group>"; };
 		1153B3A324016B5B000FAC32 /* GalleryCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GalleryCollectionViewCell.xib; sourceTree = "<group>"; };
+		115AA6462413BE1A00131F7C /* Gist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gist.swift; sourceTree = "<group>"; };
+		115AA6482413BE8800131F7C /* GistFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistFile.swift; sourceTree = "<group>"; };
 		1187DFEA23D88DEA0035F1B8 /* FileNotebook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileNotebook.swift; sourceTree = "<group>"; };
 		1190F66C23F5B3D4001D002E /* ColorPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPickerViewController.swift; sourceTree = "<group>"; };
 		1190F66D23F5B3D4001D002E /* ColorPickerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ColorPickerViewController.xib; sourceTree = "<group>"; };
@@ -156,13 +168,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		110EC7252414FAA1005FAEB0 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				110EC7262414FAB2005FAEB0 /* NetworkService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		110EC72A2414FD95005FAEB0 /* Github */ = {
+			isa = PBXGroup;
+			children = (
+				110EC7282414FCED005FAEB0 /* GithubService.swift */,
+				110EC72B2414FDA8005FAEB0 /* GithubViewController.swift */,
+			);
+			path = Github;
+			sourceTree = "<group>";
+		};
 		11117F6C23D857CB0034BCDF /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				115AA64A2413BE9100131F7C /* Github */,
 				11117F7023D8618A0034BCDF /* NoteExtension.swift */,
 				11117F6D23D857EA0034BCDF /* Note.swift */,
 				1187DFEA23D88DEA0035F1B8 /* FileNotebook.swift */,
-				113B44D52411597E00CE29B9 /* StoryboardExtension.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -186,6 +215,16 @@
 				114493C823F960F4004EE798 /* NotesTableViewController.swift */,
 			);
 			path = NoteTab;
+			sourceTree = "<group>";
+		};
+		115AA64A2413BE9100131F7C /* Github */ = {
+			isa = PBXGroup;
+			children = (
+				115AA6462413BE1A00131F7C /* Gist.swift */,
+				115AA6482413BE8800131F7C /* GistFile.swift */,
+				110EC72D24150DA0005FAEB0 /* GistId.swift */,
+			);
+			path = Github;
 			sourceTree = "<group>";
 		};
 		11A41FF324068CB50099BC84 /* Operations */ = {
@@ -274,6 +313,8 @@
 		11D0054C23D77BFE0053893E /* ya-notes */ = {
 			isa = PBXGroup;
 			children = (
+				110EC72A2414FD95005FAEB0 /* Github */,
+				110EC7252414FAA1005FAEB0 /* Services */,
 				11A41FF324068CB50099BC84 /* Operations */,
 				1134543F23FD604700823DE4 /* GalleryTab */,
 				114493C323F95CDE004EE798 /* NoteTab */,
@@ -325,6 +366,7 @@
 			isa = PBXGroup;
 			children = (
 				11F9ACFD23F165AD00D58163 /* UIColorExtension.swift */,
+				113B44D52411597E00CE29B9 /* StoryboardExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -569,6 +611,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				115AA6492413BE8800131F7C /* GistFile.swift in Sources */,
 				11A41FFA24068E380099BC84 /* BaseBackendOperation.swift in Sources */,
 				11A4200E240693100099BC84 /* NetworkError.swift in Sources */,
 				1190F66E23F5B3D4001D002E /* ColorPickerViewController.swift in Sources */,
@@ -579,16 +622,21 @@
 				113B44D62411597E00CE29B9 /* StoryboardExtension.swift in Sources */,
 				11117F7123D8618A0034BCDF /* NoteExtension.swift in Sources */,
 				11F9AD0723F1972B00D58163 /* ColorDelegate.swift in Sources */,
+				110EC72E24150DA0005FAEB0 /* GistId.swift in Sources */,
 				114493C623F95CF7004EE798 /* NoteTableViewCell.swift in Sources */,
 				11A5D4C123EED34D00F29F31 /* NoteEditViewController.swift in Sources */,
 				11D0054E23D77BFE0053893E /* AppDelegate.swift in Sources */,
 				11A5D4F223F021DE00F29F31 /* ColorPickerView.swift in Sources */,
 				11A41FFC24068E430099BC84 /* SaveNotesBackendOperation.swift in Sources */,
 				11A4200A24068E970099BC84 /* LoadNotesOperation.swift in Sources */,
+				110EC72C2414FDA8005FAEB0 /* GithubViewController.swift in Sources */,
 				11A5D4FA23F0327500F29F31 /* PaletteView.swift in Sources */,
+				110EC7292414FCED005FAEB0 /* GithubService.swift in Sources */,
+				115AA6472413BE1A00131F7C /* Gist.swift in Sources */,
 				11A4200624068E7F0099BC84 /* RemoveNoteDBOperation.swift in Sources */,
 				11D0055023D77BFE0053893E /* SceneDelegate.swift in Sources */,
 				11A4200C24068EA20099BC84 /* RemoveNoteOperation.swift in Sources */,
+				110EC7272414FAB2005FAEB0 /* NetworkService.swift in Sources */,
 				1134544B23FD874D00823DE4 /* ImagePreviewViewController.swift in Sources */,
 				11D0055823D77BFE0053893E /* ya_notes.xcdatamodeld in Sources */,
 				1187DFEB23D88DEA0035F1B8 /* FileNotebook.swift in Sources */,
