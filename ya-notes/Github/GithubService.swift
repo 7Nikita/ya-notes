@@ -13,8 +13,6 @@ class GithubService {
     
     private let fileServerName = "ios-course-notes-db"
     
-    var gistRawUrl: String?
-    
     func saveGithubToken(value: String) {
         UserDefaults.standard.set(value, forKey: "githubToken")
         DDLogInfo("Github token saved.")
@@ -24,6 +22,10 @@ class GithubService {
         return UserDefaults.standard.string(forKey: "githubToken")
     }
     
+    func getGistId() -> String? {
+        return UserDefaults.standard.string(forKey: "gistId")
+    }
+
     func getGistDbId(completion: @escaping () -> Void) {
         guard let githubToken = getGithubToken() else { return }
         let stringUrl = "https://api.github.com/gists"
@@ -51,7 +53,6 @@ class GithubService {
                 if gist.isEmpty {
                     UserDefaults.standard.set(nil, forKey: "gistId")
                 } else {
-                    self.gistRawUrl = gist.first?.files.first?.value.rawUrl
                     let newGistId = (gist.first?.id)!
                     UserDefaults.standard.set(newGistId, forKey: "gistId")
                     completion()
@@ -64,10 +65,8 @@ class GithubService {
     }
     
     func getGistContent(completion: @escaping ([Note]?) -> Void) {
-        guard let stringUrl = gistRawUrl else {
-            completion(nil)
-            return
-        }
+        guard let gistId = getGistId() else { return }
+        let stringUrl = "https://api.github.com/gists/\(gistId)"
         guard let url = URL(string: stringUrl) else {
             completion(nil)
             return
@@ -89,7 +88,10 @@ class GithubService {
                 completion(nil)
                 return
             }
-            let jsonArray = try? JSONSerialization.jsonObject(with: data, options: []) as? [[String: Any]]
+            let gistFiles = try? JSONDecoder().decode([GistFile].self, from: data)
+            let gist = gistFiles?.filter { ($0.filename.elementsEqual(self.fileServerName)) }
+            let contentData = gist?.first?.content.data(using: .utf8)
+            let jsonArray = try? JSONSerialization.jsonObject(with: contentData!, options: []) as? [[String: Any]]
             let notes = jsonArray!.map { Note.parse(json: $0)!}
             completion(notes)
         }
@@ -151,8 +153,8 @@ class GithubService {
             "files" : ["\(self.fileServerName)" : ["content": "\(String(decoding: data, as: UTF8.self))"]]]
         
         guard let githubToken = getGithubToken() else { return }
-        let rawUrl = UserDefaults.standard.object(forKey: "gistId") as? String
-        let stringUrl = "https://api.github.com/gists/\(rawUrl!)"
+        let gistId = UserDefaults.standard.object(forKey: "gistId") as? String
+        let stringUrl = "https://api.github.com/gists/\(gistId!)"
         let components = URLComponents(string: stringUrl)
         guard let url = components?.url else { return }
         

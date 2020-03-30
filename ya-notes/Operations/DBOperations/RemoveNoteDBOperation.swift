@@ -7,18 +7,40 @@
 //
 
 import Foundation
+import CoreData
+import CocoaLumberjack
 
 class RemoveNoteDBOperation: BaseDBOperation {
+    
+    private let backgroundContext: NSManagedObjectContext
+    
     let noteId: String
     
-    init(noteId: String, notebook: FileNotebook) {
+    init(noteId: String, notebook: FileNotebook, backgroundContext: NSManagedObjectContext) {
         self.noteId = noteId
+        self.backgroundContext = backgroundContext
         super.init(notebook: notebook)
     }
     
     override func main() {
+        removeNoteFromCD()
         notebook.remove(with: noteId)
-        notebook.saveToFile()
         finish()
     }
+    
+    func removeNoteFromCD() {
+        let request = NSFetchRequest<NoteCD>(entityName: "NoteCD")
+        request.predicate = NSPredicate(format: "uid == %@", noteId)
+        do {
+            let fetchResult = try backgroundContext.fetch(request)
+            if !fetchResult.isEmpty {
+                backgroundContext.delete(fetchResult.first!)
+                try backgroundContext.save()
+                DDLogInfo("Note with uid \(noteId) was removed from CoreData.")
+            }
+        } catch {
+            DDLogError(error.localizedDescription)
+        }
+    }
+    
 }

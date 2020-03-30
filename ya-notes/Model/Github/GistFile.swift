@@ -11,9 +11,11 @@ import Foundation
 struct GistFile: Codable {
     let filename: String
     let rawUrl: String
-
+    let content: String
+    
     enum CodingKeys: String, CodingKey {
         case filename
         case rawUrl = "raw_url"
+        case content
     }
 }

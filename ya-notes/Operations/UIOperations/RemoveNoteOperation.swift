@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import CoreData
 
 class RemoveNoteOperation: AsyncOperation {
     private let noteId: String
@@ -19,12 +20,13 @@ class RemoveNoteOperation: AsyncOperation {
     init(noteId: String,
          notebook: FileNotebook,
          backendQueue: OperationQueue,
-         dbQueue: OperationQueue) {
+         dbQueue: OperationQueue,
+         backgroundContext: NSManagedObjectContext) {
         self.noteId = noteId
         self.notebook = notebook
         self.dbQueue = dbQueue
         
-        removeFromDB = RemoveNoteDBOperation(noteId: noteId, notebook: notebook)
+        removeFromDB = RemoveNoteDBOperation(noteId: noteId, notebook: notebook, backgroundContext: backgroundContext)
         
         super.init()
         

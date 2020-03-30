@@ -7,12 +7,16 @@
 //
 
 import UIKit
+import CoreData
 
 class NotesTableViewController: UIViewController {
     
     let noteCellReuseIdentifier = "noteCell"
     let noteTableViewCellNibName = "NoteTableViewCell"
     let noteEditViewControllerIdentifier = "NoteEditViewController"
+    
+    var context: NSManagedObjectContext!
+    var backgroundContext: NSManagedObjectContext!
     
     private let githubService = GithubService()
     private let notesQueue = OperationQueue()
@@ -24,6 +28,8 @@ class NotesTableViewController: UIViewController {
         didSet {
             notesTableView.delegate = self
             notesTableView.dataSource = self
+            notesTableView.refreshControl = UIRefreshControl()
+            notesTableView.refreshControl?.addTarget(self, action: #selector(refreshNotes), for: .valueChanged)
         }
     }
     
@@ -46,10 +52,9 @@ class NotesTableViewController: UIViewController {
         notesTableView.register(UINib(nibName: noteTableViewCellNibName, bundle: nil),
                                 forCellReuseIdentifier: noteCellReuseIdentifier)
         
+        loadNotes()
         if NetworkService.isConnectedToNetwork() && githubService.getGithubToken() == nil {
             createGithubViewController()
-        } else {
-            loadNotes()
         }
         
     }
@@ -68,6 +73,11 @@ class NotesTableViewController: UIViewController {
         navigationController?.pushViewController(noteEditViewController, animated: true)
     }
     
+    @objc private func refreshNotes() {
+        loadNotes()
+        notesTableView.refreshControl?.endRefreshing()
+    }
+    
     private func createGithubViewController() {
         let githubViewController = GithubViewController()
         githubViewController.delegate = self
@@ -77,7 +87,8 @@ class NotesTableViewController: UIViewController {
     private func loadNotes() {
         let loadNotesOperation = LoadNotesOperation(notebook: fileNotebook,
                                                     backendQueue: backendQueue,
-                                                    dbQueue: dbQueue)
+                                                    dbQueue: dbQueue,
+                                                    backgroundContext: backgroundContext)
         loadNotesOperation.completionBlock = {
             OperationQueue.main.addOperation {
                 self.notesTableView.reloadData()
@@ -95,7 +106,8 @@ class NotesTableViewController: UIViewController {
                 let saveNoteOperation = SaveNoteOperation(note: note,
                                                           notebook: self.fileNotebook,
                                                           backendQueue: self.backendQueue,
-                                                          dbQueue: self.dbQueue)
+                                                          dbQueue: self.dbQueue,
+                                                          backgroundContext: self.backgroundContext)
                 saveNoteOperation.completionBlock = {
                     OperationQueue.main.addOperation {
                         self.notesTableView.reloadData()
@@ -140,7 +152,8 @@ extension NotesTableViewController: UITableViewDataSource, UITableViewDelegate {
         let removeNoteOperation = RemoveNoteOperation(noteId: noteUid,
                                                       notebook: fileNotebook,
                                                       backendQueue: backendQueue,
-                                                      dbQueue: dbQueue)
+                                                      dbQueue: dbQueue,
+                                                      backgroundContext: backgroundContext)
         removeNoteOperation.completionBlock = {
             OperationQueue.main.addOperation {
                 self.notesTableView.reloadData()
