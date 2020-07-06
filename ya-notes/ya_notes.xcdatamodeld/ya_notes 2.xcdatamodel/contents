@@ -6,12 +6,13 @@
         <attribute name="colorGreen" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="colorRed" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="content" attributeType="String"/>
+        <attribute name="creationDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="destructionDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="importance" attributeType="String"/>
         <attribute name="title" attributeType="String"/>
         <attribute name="uid" attributeType="String"/>
     </entity>
     <elements>
-        <element name="NoteCD" positionX="-63" positionY="-18" width="128" height="178"/>
+        <element name="NoteCD" positionX="-63" positionY="-18" width="128" height="193"/>
     </elements>
 </model>

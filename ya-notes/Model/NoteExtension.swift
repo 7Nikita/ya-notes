@@ -73,7 +73,7 @@ extension Note {
         )
     }
     
-    private static func getColorFromComponents(components: [String: Double]) -> UIColor {
+    static func getColorFromComponents(components: [String: Double]) -> UIColor {
         guard
             let red = components[ColorModel.red.rawValue],
             let green = components[ColorModel.green.rawValue],
@@ -90,7 +90,7 @@ extension Note {
         )
     }
     
-    private func getComponentsFromColor(color: UIColor) -> [String: Double] {
+     func getComponentsFromColor(color: UIColor) -> [String: Double] {
         var r = CGFloat(), g = CGFloat(), b = CGFloat(), a = CGFloat()
         color.getRed(&r, green: &g, blue: &b, alpha: &a)
         return [
@@ -99,13 +99,6 @@ extension Note {
             ColorModel.blue.rawValue: Double(b),
             ColorModel.alpha.rawValue: Double(a)
         ]
-    }
-    
-    private enum ColorModel: String {
-        case red
-        case green
-        case blue
-        case alpha
     }
     
 }

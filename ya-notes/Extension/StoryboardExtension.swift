@@ -13,7 +13,7 @@ extension UIStoryboard {
                                                  bundle: Bundle? = nil,
                                                  viewControllerIdentifier: String) -> UIViewController {
         let storyboard = UIStoryboard(name: storyboardIdentifier, bundle: bundle)
-        let viewController = storyboard.instantiateViewController(identifier: viewControllerIdentifier)
+        let viewController = storyboard.instantiateViewController(withIdentifier: viewControllerIdentifier)
         return viewController
     }
 }
